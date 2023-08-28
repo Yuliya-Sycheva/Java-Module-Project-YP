@@ -9,11 +9,14 @@ public class PersonCount {
 
         while (true) {
             System.out.println("На скольких человек необходимо разделить счёт?");
-            personCount = scanner.nextInt();
+            if (scanner.hasNextInt()) {
+                personCount = scanner.nextInt();
+            }
             if (personCount > 1) {
                 break;
             } else {
                 System.out.println("Введено некорректное значение.");
+                scanner.nextLine();
             }
         }
     }
